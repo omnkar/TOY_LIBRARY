@@ -1,0 +1,43 @@
+body
+{
+    font-family: "Plus Jakarta Sans", system-ui !important;
+    font-weight: 500 !important;
+    height: 100vh;
+    
+}
+.navbar
+{
+    background-color: white !important;
+}
+.card-img-top
+{
+    width: 60% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+.card col
+{
+    width: 18rem !important;
+    height: 30% !important;
+    border-radius: 3rem;
+}
+.card-img-overlay
+{
+    width: 30px !important;
+}
+.row .toy-links
+{
+    
+    width: 20% !important;
+     
+    text-decoration: none;
+}
+.card-text
+{
+    font-size: 2rem;
+    padding-top: 0;
+}
+.card-text b
+{
+    text-decoration: none !important;
+}
