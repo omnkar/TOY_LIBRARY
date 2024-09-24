@@ -5,7 +5,7 @@ const ejsMate=require("ejs-mate");
 const path=require("path");
 const mysql=require('mysql2');
 const { render } = require("ejs");
-const port=8080;
+const port=8000;
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
