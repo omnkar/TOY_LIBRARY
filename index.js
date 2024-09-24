@@ -30,14 +30,15 @@ app.get("/toys/:id",(req,res)=>
     let q=`select * from toy where toyid='${id}'`;
     try
     {
-        connection.query(q,(err,toy)=>
+        connection.query(q,(err,result)=>
         {
             if(err)
             {
                 throw err;
             }
+            let toy=result[0];
             res.render("toies/showToys.ejs",{toy});
-        })
+        });
     }
     catch(err)
     {
