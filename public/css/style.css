@@ -1,10 +1,37 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
 body
 {
     font-family: "Plus Jakarta Sans",sans-serif !important;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    
+
 }
+.home
+{
+    
+    background-image: url("https://plus.unsplash.com/premium_photo-1684623605204-8daab949ce21?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dG95JTIwbGlicmFyeXxlbnwwfHwwfHx8MA%3D%3D");
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    object-fit: contain;
+    background-position: center;
+    height: 100vh !important;
+    width: 100vw !important;
+    padding-left: 0 !important;
+    opacity: 0.6;
+}
+/* .home h1
+{
+    background-color: #fe424d;
+    height: 100vh !important;
+    width: 100vw !important;
+    padding-left: 0 !important;
+} */
 .container
 {
     flex: 1;
@@ -14,6 +41,7 @@ body
 {
     background-color: white !important;
     height: 5rem;
+    width: 100rem !important;
 }
 .fa-compass
 {

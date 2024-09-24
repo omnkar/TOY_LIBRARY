@@ -24,6 +24,10 @@ const connection=mysql.createConnection(
     }
 );
 
+app.get("/",(req,res)=>
+{
+    res.render("toies/home.ejs");
+})
 app.get("/toys/:id",(req,res)=>
 {   
     let {id}=req.params;
