@@ -24,9 +24,26 @@ const connection=mysql.createConnection(
     }
 );
 
-app.get("/toys",(req,res)=>
-{
-   res.render("toies/index.ejs");
+app.get("/toys/:id",(req,res)=>
+{   
+    let {id}=req.params;
+    let q=`select * from toy where toyid='${id}'`;
+    try
+    {
+        connection.query(q,(err,toy)=>
+        {
+            if(err)
+            {
+                throw err;
+            }
+            res.render("toies/showToys.ejs",{toy});
+        })
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+   
 })
 //create route
 app.get("/addtoy",(req,res)=>
@@ -43,7 +60,7 @@ app.get("/toys/issuetoy",(req,res)=>
 {
     res.render("toies/issuedToy.ejs");
 })
-//show route
+//index route
 app.get("/alltoys",(req,res)=>
 {
     let q="select * from toy";
@@ -55,7 +72,7 @@ app.get("/alltoys",(req,res)=>
             {
                 throw err;
             }
-            res.render("toies/showToys.ejs",{toys});
+            res.render("toies/index.ejs",{toys});
         })
     }
     catch(err)

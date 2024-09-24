@@ -1,23 +1,24 @@
 <% layout("/layouts/boilerplate.ejs") %>
-<body>
-    <h1>showing all toys</h1>
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
-        <% for(let toy of toys) { %>
-            <a href="/toys/<%= toy.toyid %>" class="toys-links">
-                <div class="card col">
-                    <img src="<%= toy.toyimage %>" class="card-img-top" alt="toys-image"  style="height: 20rem;" >
+<div class="row mt-3">
+  <div class="col-8 offset-2 mt-3 show-card">
+      <h1>Toy Details</h1>
+  </div>
+  <div class="card col-6 offset-2">
+      <img src="<%= toy.image %>" class="card-img-top show-img" alt="Listing_image">
+      <div class="card-body">
+          <p class="card-text">
+              <b><%= toy.toyname %></b> <br>
+              <%= toy.toycategory %><br>
+              <%= toy.price %><br>
+              <%= toy.toyquantity%><br>
 
-                    <div class="card-img-overlay"></div>
-                    <div class="card-body">
-                      <p class="card-text">
-                        <b>Toy Name:<%= toy.toyname %></b><br> 
-                        Toy Category:<%= toy.toycategory %><br>
-                        Toy Price:<%= toy.toyprice %>
-                    </p>
-                    </div>
-                  </div>
-            </a>
-              <% } %>
-    </div>
-</body>
-</html>
+          </p>
+      </div>
+  </div>
+</div>
+<div class="btns">
+  <br><a href="/toy/<%= toy.toyid %>/edit" class="btn btn-dark edit-btn col-1 offset-2">Edit</a>
+  <form action="/toy/<%=toy.toyid %>/delete?_method=delete" method="post" >
+      <button class="btn btn-dark  del-btn offset-4">Delete</button>
+  </form>
+</div>

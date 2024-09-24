@@ -1,25 +1,23 @@
 <% layout("/layouts/boilerplate") %>
 <body>
       <h3>All Toys</h3>
-      <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1"></div>
-      <% for(let toy of toys) { %>
-          <a href="/toys/<%= toy.toyid %>" class="toys-links" style= "width:18rem">
-              <div class="card col" style="width: 18rem;">
-                  <img src="<%= toy.toyimage %>" class="card-img-top" alt="toys-image" >
-
-                  <div class="card-img-overlay"></div>
-                  <hr>
-                  <div class="card-body">
-                    <p class="card-text">
-                      <b>Toy Name:<%= toy.toyname %></b><br> 
-                      <b>Toy Category:<%= toy.toycategory %></b>
-                      <b>Toy Price:</b>
-                  </p>
-                  </div>
-                </div>
-          </a>
-            <% } %>
-  </div>
+      <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+          <% for(let toy of toys) { %>
+              <a href="/toys/<%= toy.toyid %>" class="toys-links">
+                  <div class="card col">
+                      <img src="<%= toy.toyimage %>" class="card-img-top" alt="toys-image"  style="height: 20rem;" >
+  
+                      <div class="card-img-overlay"></div>
+                      <div class="card-body">
+                        <p class="card-text">
+                          <b>Toy Name:<%= toy.toyname %></b><br> 
+                          Toy Price:<%= toy.toyprice %>
+                      </p>
+                      </div>
+                    </div>
+              </a>
+                <% } %>
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
