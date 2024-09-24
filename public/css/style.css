@@ -12,7 +12,7 @@ body
 /*navbar */
 .navbar
 {
-    background-color: white;
+    background-color: white !important;
     height: 5rem;
 }
 .fa-compass
@@ -117,7 +117,7 @@ body
 /*styling show page */
 .show-img
 {
-    height: 40vh;
+    height: 40vh !important;
 }
 .show-card
 {
