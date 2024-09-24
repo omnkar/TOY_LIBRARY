@@ -1,43 +1,126 @@
 body
 {
-    font-family: "Plus Jakarta Sans", system-ui !important;
-    font-weight: 500 !important;
-    height: 100vh;
-    
+    font-family: "Plus Jakarta Sans",sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+.container
+{
+    flex: 1;
+}
+/*navbar */
 .navbar
 {
-    background-color: white !important;
+    background-color: white;
+    height: 5rem;
+}
+.fa-compass
+{
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link
+{
+    color: #222222 !important;
+
+}
+/*footer */
+.f-info-links a
+{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a :hover{
+    text-decoration: underline;
+}
+.f-info-links,.f-info-socials,.f-info-brand
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i
+{
+    font-size: 1.2rem;
+    margin-right: 1.2rem;
+}
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+
+}
+
+/*styling index */
+.card
+{
+    border: none !important;
+    margin-bottom: 2rem;
 }
 .card-img-top
 {
-    width: 60% !important;
-  height: 100% !important;
-  object-fit: cover !important;
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover;
 }
-.card col
+.card-body
 {
-    width: 18rem !important;
-    height: 30% !important;
-    border-radius: 3rem;
+    padding: 0 !important;
 }
+.card-text p
+{
+    font-weight: 400;
+}
+.listing-links
+{
+    text-decoration: none;
+
+}
+
 .card-img-overlay
 {
-    width: 30px !important;
+    opacity: 0;
 }
-.row .toy-links
+.card-img-overlay:hover
 {
-    
-    width: 20% !important;
-     
-    text-decoration: none;
+    opacity: 0.2;
+    background-color: white;
 }
-.card-text
+
+/*styling new listing */
+
+.add-btn,.edit-btn ,.edit1-btn
 {
-    font-size: 2rem;
-    padding-top: 0;
+   
+    background-color:  #fe424d !important;
+    border: none !important;
 }
-.card-text b
+
+/*styling edit page */
+.edit1-btn
 {
-    text-decoration: none !important;
+    margin-top:10rem !important;
+    margin-left: 15rem !important;
+    width: 5% !important;
+}
+.btns
+{
+    display: flex;
+}
+/*styling show page */
+.show-img
+{
+    height: 40vh;
+}
+.show-card
+{
+    padding-left: 0;
+    padding-right: 0;
 }
