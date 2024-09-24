@@ -64,6 +64,7 @@ body
     border: none !important;
     margin-bottom: 2rem;
 }
+
 .card-col
 {
     width: calc(33.33% - 2rem); /* Adjust for desired percentage and margin */
@@ -72,7 +73,7 @@ body
 .card-img-top
 {
     border-radius: 1rem !important;
-    width: 30% !important;
+    width: 100% !important;
     object-fit: cover;
 }
 .card-body
@@ -83,17 +84,16 @@ body
 {
     font-weight: 400;
 }
-.toy-links
+.toys-links
 {
-    text-decoration: none;
-    width: 30% !important;
+    text-decoration: none !important;
+    
 
 }
 
 .card-img-overlay
 {
     opacity: 0;
-    width: 30% !important;
 }
 .card-img-overlay:hover
 {

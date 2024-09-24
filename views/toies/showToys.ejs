@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate.ejs") %>
 <body>
     <h1>showing all toys</h1>
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1"></div>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
         <% for(let toy of toys) { %>
             <a href="/toys/<%= toy.toyid %>" class="toys-links">
                 <div class="card col">
@@ -11,8 +11,8 @@
                     <div class="card-body">
                       <p class="card-text">
                         <b>Toy Name:<%= toy.toyname %></b><br> 
-                        <b>Toy Category:<%= toy.toycategory %></b><br>
-                        <b>Toy Price:<%= toy.toyprice %></b>
+                        Toy Category:<%= toy.toycategory %><br>
+                        Toy Price:<%= toy.toyprice %>
                     </p>
                     </div>
                   </div>
