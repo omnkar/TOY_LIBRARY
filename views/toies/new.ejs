@@ -5,19 +5,19 @@
     <div class="col-8 offset-2" >
         <br>
     <h3>Add a New toy</h3>
-    <form action="/alltoys/new" method="post" novalidate class="needs-validation">
+    <form action="/toys/new" method="post" novalidate id="newForm" class="needs-validation">
         <div class="mb-3">
             <label for="title" class="form-label">Toy Name</label>
-            <input type="text" class="form-control" name="toyname" id="title" placeholder="Add a Toy Name" required>
-            <div class="valid-feedback">
+            <input type="text" required class="form-control" name="toyname" id="title" placeholder="Add a Toy Name" required>
+            <div class="invalid-feedback">
                 Toy name looks good!
             </div>
         </div>
        
         
         <div class="mb-3">
-            <label for="desc" class="form-label"> Category</label>
-            <input type="text" required name="toycategory" class="form-control" placeholder="" id="desc">
+            <label for="cate" class="form-label"> Category</label>
+            <input type="text" required name="toycategory" class="form-control" placeholder="" id="cate">
             <div class="invalid-feedback">
                 Please enter Toy Category
             </div>
@@ -27,7 +27,7 @@
         
         <div class="mb-3">
             <label for="image" class="form-label">Image</label>
-        <input type="text" id="image" required class="form-control" name="toyquantity" placeholder="Enter image URL/link">
+        <input type="text" id="image" required class="form-control" name="toyimage" placeholder="Enter image URL/link">
         <div class="invalid-feedback">
             Image link should be valid
         </div>
@@ -35,16 +35,16 @@
         
         <div class="row">
             <div class="mb-3 col-md-4">
-                <label for="price" class="form-label"> Price</label>
-            <input  id="price" required class="form-control" name="toyprice" placeholder="1200">
+                <label for="price" class="form-label"> Rent</label>
+            <input type="text" id="price" required class="form-control" name="toyprice" placeholder="1200">
             <div class="invalid-feedback">
-                Price Should be valid
+                Rent Should be valid
             </div>
             </div>
            
             <div class="mb-3 col-md-8">
-                <label for="country" class="form-label"> Quantity</label>
-            <input type="text" id="country" required class="form-control" name="toyimage" placeholder="5">
+                <label for="quant" class="form-label"> Quantity</label>
+            <input type="number" id="quant" required class="form-control" name="toyquantity" placeholder="5">
             <div class="invalid-feedback">
                 Quantity should be valid
             </div>

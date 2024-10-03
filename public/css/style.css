@@ -41,7 +41,7 @@ body
 {
     background-color: white !important;
     height: 5rem;
-    width: 100rem !important;
+    /* width: 100rem !important; */
 }
 .fa-compass
 {
@@ -130,18 +130,22 @@ body
     background-color:  #fe424d !important;
     border: none !important;
 }
-
-/*styling edit page */
 .edit1-btn
 {
     margin-top:10rem !important;
     margin-left: 15rem !important;
     width: 5% !important;
 }
+
+/*styling edit page */
 .btns
 {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
+
 /*styling show page */
 .show-img
 {

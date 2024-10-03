@@ -28,8 +28,31 @@ app.get("/",(req,res)=>
 {
     res.render("toies/home.ejs");
 })
+//index route
+app.get("/alltoys",(req,res)=>
+    {
+        let q="select * from toy";
+        try
+        {
+            connection.query(q,(err,toys)=>
+            {
+                if(err)
+                {
+                    throw err;
+                }
+                res.render("toies/index.ejs",{toys});
+            })
+        }
+        catch(err)
+        {
+            console.log(err);
+        }
+    
+    })
+//show route
 app.get("/toys/:id",(req,res)=>
 {   
+    console.log("in show route");
     let {id}=req.params;
     let q=`select * from toy where toyid='${id}'`;
     try
@@ -55,37 +78,55 @@ app.get("/addtoy",(req,res)=>
 {
     res.render("toies/new.ejs");
 })
+//issued toy
+app.get("/toys/issuetoy",(req,res)=>
+    {
+        console.log("in issused toy");
+        res.render("toies/issuedToy.ejs");
+    })
 //new route
 app.post("/toys/new",(req,res)=>
 {
+    const { toyname, toycategory, toyimage, toyprice, toyquantity } =req.body;
+   let q=`insert into toy(toyname,toyprice,toycategory,toyquantity,toyimage) values('${toyname}', '${toyprice}', '${toycategory}', '${toyquantity}', '${toyimage}')`;
+   try{
+    connection.query(q,(err,toy)=>
+    {
+        if(err)
+        {
+            throw err;
+        }
+        res.redirect("/alltoys");
+    })
+   }
+   catch(err)
+   {
+        res.send("Error",err);
+   }
 
 })
-//issued toy
-app.get("/toys/issuetoy",(req,res)=>
+//delete route
+app.delete("/toy/:id",(req,res)=>
 {
-    res.render("toies/issuedToy.ejs");
-})
-//index route
-app.get("/alltoys",(req,res)=>
-{
-    let q="select * from toy";
+    let{id}=req.params;
+    let q=`delete from toy where toyid='${id}'`;
     try
     {
-        connection.query(q,(err,toys)=>
+        connection.query(q,(err,result)=>
         {
             if(err)
             {
                 throw err;
             }
-            res.render("toies/index.ejs",{toys});
+            res.redirect("/alltoys");
         })
     }
     catch(err)
     {
-        console.log(err);
+        res.send("err",err);
     }
-
 })
+
 app.listen(port,()=>
 {
     console.log("listening");
