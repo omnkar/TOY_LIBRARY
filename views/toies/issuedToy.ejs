@@ -4,11 +4,11 @@
     <br>
     <div class="col-8 offset-2" >
         <br>
-    <h3>Add a New toy</h3>
+    <h3>issue A toy</h3>
     <form action="/alltoys" method="post" novalidate class="needs-validation">
         <div class="mb-3">
             <label for="title" class="form-label">Toy Name</label>
-            <input type="text" class="form-control" name="toyname" id="title" placeholder="Add a Toy Name" required>
+            <input type="text" required class="form-control" name="toyname" id="title" placeholder="Add a Toy Name" required>
             <div class="valid-feedback">
                 Toy name looks good!
             </div>
@@ -16,8 +16,8 @@
        
         
         <div class="mb-3">
-            <label for="desc" class="form-label"> Category</label>
-            <input type="text" required name="toycategory" class="form-control" placeholder="" id="desc">
+            <label for="cate" class="form-label"> Category</label>
+            <input type="text" required name="toycategory" class="form-control" placeholder="" id="cate">
             <div class="invalid-feedback">
                 Please enter Toy Category
             </div>
@@ -59,8 +59,8 @@
         </div>
         </div>
         <div class="mb-3">
-            <label for="memname" class="form-label">Member Contact</label>
-        <input type="tel" id="memname" required class="form-control" name="membercontact" placeholder="Enter Member Contact">
+            <label for="telephone" class="form-label">Member Contact</label>
+        <input type="text" id="telephone" pattern="^\d{10}$" required class="form-control" name="membercontact" placeholder="Enter Member Contact">
         <div class="invalid-feedback">
             Contact should be valid
         </div>

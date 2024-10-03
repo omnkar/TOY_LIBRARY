@@ -30,6 +30,9 @@ const titleField=document.getElementById('title');
 const categoryField=document.getElementById('cate');
 const priceField=document.getElementById('price');
 const quantityField=document.getElementById('quant');
+const memnameField=document.getElementById('memname');
+const telphoneField=document.getElementById('telephone');
+
 titleField.addEventListener('keypress',(event)=>
 {
   if(event.key>='0' && event.key<='9')
@@ -47,6 +50,27 @@ categoryField.addEventListener('keypress',(event)=>
 priceField.addEventListener('keypress',(event)=>
 {
   if((event.key>='a' && event.key<='z') ||(event.key>='A' && event.key<='Z') || event.key.length()>5)
+  {
+    event.preventDefault();
+  }
+})
+
+telphoneField.addEventListener('keypress',(event)=>
+{
+  if((event.key>='a' && event.key<='z') ||(event.key>='A' && event.key<='Z') || event.key.length()>5)
+  {
+    event.preventDefault();
+  }
+})
+forms.addEventListener('submit', function(event) {
+  // Final validation before submission
+  if (telphoneField.value.length > 10) {
+      event.preventDefault(); // Prevent form submission
+      errorMessage.style.display = 'block'; // Show error message
+  }
+});
+memnameField.addEventListener('keypress',(event)=>
+{ if(event.key>='0' && event.key<='9') 
   {
     event.preventDefault();
   }

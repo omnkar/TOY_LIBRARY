@@ -49,7 +49,20 @@ app.get("/alltoys",(req,res)=>
         }
     
     })
+//create route
+app.get("/addtoy",(req,res)=>
+{
+    res.render("toies/new.ejs");
+})
+//issued toy
+app.get("/toys/issuetoy",(req,res)=>
+{
+    //console.log("in issused toy");
+    res.render("toies/issuedToy.ejs");
+})
+
 //show route
+
 app.get("/toys/:id",(req,res)=>
 {   
     console.log("in show route");
@@ -73,17 +86,7 @@ app.get("/toys/:id",(req,res)=>
     }
    
 })
-//create route
-app.get("/addtoy",(req,res)=>
-{
-    res.render("toies/new.ejs");
-})
-//issued toy
-app.get("/toys/issuetoy",(req,res)=>
-    {
-        console.log("in issused toy");
-        res.render("toies/issuedToy.ejs");
-    })
+
 //new route
 app.post("/toys/new",(req,res)=>
 {
