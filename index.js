@@ -65,7 +65,7 @@ app.get("/toys/issuetoy",(req,res)=>
 
 app.get("/toys/:id",(req,res)=>
 {   
-    console.log("in show route");
+    // console.log("in show route");
     let {id}=req.params;
     let q=`select * from toy where toyid='${id}'`;
     try

@@ -1,4 +1,37 @@
 <% layout("/layouts/boilerplate") %>
+<style>
+    .card
+    {
+    border: none !important;
+    margin-bottom: 2rem;
+    }
+    .card-img-top
+    {
+        border-radius: 1rem !important;
+        width: 100% !important;
+        object-fit: cover;
+        height: 30rem !important;
+    }
+    .card-body
+    {
+        padding: 0 !important;
+    }
+    .card-text p
+    {
+        font-weight: 400;
+    }
+    .btns
+    {
+        display: flex;
+    }
+    .edit-btn
+    {
+        background-color:  #fe424d !important;
+        border: none !important;
+        height: 2.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+</style>
 <div class="row mt-3">
   <div class="col-8 offset-2 mt-3 show-card">
       <h1>Toy Details</h1>
@@ -13,10 +46,12 @@
           </p>
       </div>
   </div>
+  <br>
 </div>
 <div class="btns">
   <br><a href="/toy/<%= toy.toyid %>/edit" class="btn btn-dark edit-btn col-1 offset-2">Edit</a>
   <form action="/toy/<%=toy.toyid %>?_method=delete" method="post" >
       <button class="btn btn-dark del-btn offset-4">Delete</button>
   </form>
+  <br><br><br>
 </div>

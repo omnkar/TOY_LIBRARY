@@ -124,7 +124,7 @@ body
 
 /*styling new listing */
 
-.add-btn,.edit-btn ,.edit1-btn
+.add-btn, .edit-btn, .edit1-btn
 {
    
     background-color:  #fe424d !important;
@@ -136,14 +136,15 @@ body
     margin-left: 15rem !important;
     width: 5% !important;
 }
-
+.del-btn
+{
+    margin-bottom: 1.5rem;
+}
 /*styling edit page */
 .btns
 {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    
+   
 }
 
 /*styling show page */

@@ -1,10 +1,18 @@
 <% layout("/layouts/boilerplate") %>
+<style>
+    .add-btn, .edit-btn, .edit1-btn
+    {
+   
+        background-color:  #fe424d !important;
+        border: none !important;
+    }   
+</style>
 <div class="row mt-3">
 
     <br>
     <div class="col-8 offset-2" >
         <br>
-    <h3>issue A toy</h3>
+    <h3>Issue A toy</h3>
     <form action="/alltoys" method="post" novalidate class="needs-validation">
         <div class="mb-3">
             <label for="title" class="form-label">Toy Name</label>
@@ -53,20 +61,20 @@
         </div>
         <div class="mb-3">
             <label for="memname" class="form-label">Member Address</label>
-        <textarea type="text" id="memname" required class="form-control" name="memberaddress" placeholder="Enter Member Address"></textarea>
-        <div class="invalid-feedback">
-            Address should be valid
-        </div>
+            <textarea type="text" id="memname" required class="form-control" name="memberaddress" placeholder="Enter Member Address"></textarea>
+            <div class="invalid-feedback">
+                 Address should be valid
+            </div>
         </div>
         <div class="mb-3">
             <label for="telephone" class="form-label">Member Contact</label>
-        <input type="text" id="telephone" pattern="^\d{10}$" required class="form-control" name="membercontact" placeholder="Enter Member Contact">
-        <div class="invalid-feedback">
-            Contact should be valid
-        </div>
+            <input type="text" id="telephone" pattern="^\d{10}$" required class="form-control" name="membercontact" placeholder="Enter Member Contact">
+            <div class="invalid-feedback">
+                Contact should be valid
+            </div>
         </div>
 
-        <button class="btn btn-dark add-btn mt-2">Issued</button>
+        <button class="add-btn btn btn-dark  mt-2">Issued</button>
         <br><br>
     </form>
 </div>
