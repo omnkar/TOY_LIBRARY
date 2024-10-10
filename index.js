@@ -86,6 +86,51 @@ app.get("/toys/returntoy",(req,res)=>
 {
     res.render("toies/returnToy.ejs");
 })
+//tracktoy
+app.get("/toys/tracktoy",(req,res)=>
+{
+    let q=`SELECT 
+    t.toyid as Id,
+    t.toyname AS ToyName, 
+    m.membername AS MemberName, 
+    m.memcontact AS MemberContact, 
+    ts.status AS ToyStatus, 
+    f.fine AS FineAmount
+    FROM 
+        transaction tr
+    JOIN 
+        toy t ON tr.toyid = t.toyid
+    JOIN 
+        member m ON tr.memid = m.memberid
+    JOIN 
+        toystatus ts ON tr.toyid = ts.ts_toyid AND tr.memid = ts.ts_memid
+    LEFT JOIN 
+        fine f ON t.toyid = f.fk_toyid AND m.memberid = f.fk_memid
+    WHERE 
+        ts.status = 'issued' or ts.status='return'; `
+    try
+    {
+        connection.query(q,(err,toys)=>
+        {
+            if(err)
+            {
+                throw err;
+            }
+            if(!toys)
+            {
+                req.flash("error","result set is empty");
+                res.redirect("/alltoys");
+            }
+            // console.log(toys.length);
+            res.render("toies/track.ejs",{toys});
+        })
+    }
+    catch(err)
+    {
+        res.send("error",err);
+    }
+    
+})
 //show route
 
 app.get("/toys/:id",(req,res)=>

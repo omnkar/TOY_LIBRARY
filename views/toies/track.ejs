@@ -1,0 +1,26 @@
+<% layout("/layouts/boilerplate") %>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Sr.No.</th>
+        <th scope="col">Toy Name</th>
+        <th scope="col">Member Name</th>
+        <th scope="col">Member Contact</th>
+        <th scope="col">Toy Status</th>
+        <th scope="col">Fine Amount</th>
+      </tr>
+    </thead>
+    <% for(let i=0;i<toys.length;i++) { %>
+        <tbody>
+            <tr>
+              <th scope="row"><%= i+1 %></th>
+              <td><%= toys[i].ToyName %></td>
+              <td><%= toys[i].MemberName %></td>
+              <td><%= toys[i].MemberContact %></td>
+              <td><%= toys[i].ToyStatus %></td>
+              <td>&#8377;<%=toys[i].FineAmount != null ? toys[i].FineAmount : 0  %></td>
+            </tr>
+          </tbody>
+    <% } %>
+    
+  </table>
