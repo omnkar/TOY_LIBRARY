@@ -1,0 +1,47 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+    .add-btn, .edit-btn, .edit1-btn
+    {
+   
+        background-color:  #fe424d !important;
+        border: none !important;
+    }   
+</style>
+<div class="row mt-3">
+
+    <br>
+    <div class="col-8 offset-2" >
+        <br>
+    <h3>Return A toy</h3>
+    <form action="/toys/return" method="post" novalidate class="needs-validation">
+        <div class="mb-3">
+            <label for="title" class="form-label">Toy Name</label>
+            <input type="text" required class="form-control" name="toyname" id="title" placeholder="Add a Toy Name" required>
+            <div class="valid-feedback">
+                Toy name looks good!
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="mb-3 col-md-8">
+                <label for="country" class="form-label"> Returned Date</label>
+                <input type="date" id="country" required class="form-control" name="returndate" placeholder="">
+                <div class="invalid-feedback">
+                    Return Date should be valid
+                </div>
+            </div>
+    
+        </div>
+        <div class="mb-3">
+            <label for="telephone" class="form-label">Member Contact</label>
+            <input type="text" id="telephone" pattern="^\d{10}$" required class="form-control" name="memcontact" placeholder="Enter Member Contact">
+            <div class="invalid-feedback">
+                Contact should be valid
+            </div>
+        </div>
+
+        <button class="add-btn btn btn-dark  mt-2">Return</button>
+        <br><br>
+    </form>
+</div>
+</div>

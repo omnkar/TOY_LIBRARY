@@ -13,7 +13,7 @@
     <div class="col-8 offset-2" >
         <br>
     <h3>Issue A toy</h3>
-    <form action="/alltoys" method="post" novalidate class="needs-validation">
+    <form action="/toys/issue" method="post" novalidate class="needs-validation">
         <div class="mb-3">
             <label for="title" class="form-label">Toy Name</label>
             <input type="text" required class="form-control" name="toyname" id="title" placeholder="Add a Toy Name" required>
@@ -44,7 +44,7 @@
         <div class="row">
             <div class="mb-3 col-md-4">
                 <label for="price" class="form-label"> Isseu Date </label>
-            <input  type ="date" id="price" required class="form-control" name="Issdt" placeholder="1200">
+            <input  type ="date" id="price" required class="form-control" name="issueddate" placeholder="1200">
             <div class="invalid-feedback">
                Issue Date should be valid
             </div>
@@ -52,7 +52,7 @@
            
             <div class="mb-3 col-md-8">
                 <label for="country" class="form-label"> Returned Date</label>
-            <input type="date" id="country" required class="form-control" name="retdt" placeholder="">
+            <input type="date" id="country" required class="form-control" name="returndate" placeholder="">
             <div class="invalid-feedback">
                 Return Date should be valid
             </div>
@@ -61,14 +61,14 @@
         </div>
         <div class="mb-3">
             <label for="memname" class="form-label">Member Address</label>
-            <textarea type="text" id="memname" required class="form-control" name="memberaddress" placeholder="Enter Member Address"></textarea>
+            <textarea type="text" id="memname" required class="form-control" name="memaddress" placeholder="Enter Member Address"></textarea>
             <div class="invalid-feedback">
                  Address should be valid
             </div>
         </div>
         <div class="mb-3">
             <label for="telephone" class="form-label">Member Contact</label>
-            <input type="text" id="telephone" pattern="^\d{10}$" required class="form-control" name="membercontact" placeholder="Enter Member Contact">
+            <input type="text" id="telephone" pattern="^\d{10}$" required class="form-control" name="memcontact" placeholder="Enter Member Contact">
             <div class="invalid-feedback">
                 Contact should be valid
             </div>
